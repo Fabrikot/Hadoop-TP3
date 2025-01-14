@@ -1,0 +1,8 @@
+docker build -t fabrikot/tp-final .
+docker run --rm --name=fabrikot-tp-final -p 8088:8088 -p 9870:9870 -p 9864:9864 -v ./data:/data -v ./jars:/jars -d fabrikot/tp-final
+docker exec -it fabrikot-tp-final bash
+
+hdfs dfs -mkdir -p /fdeville/input
+hdfs dfs -put /data/relationships/data.txt /fdeville/input/
+
+hadoop jar /jars/job1.jar org.epf.hadoop.colfil1.ColFilJob1  /fdeville/input/data.txt /output/job1
