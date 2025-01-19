@@ -9,7 +9,8 @@ import java.util.List;
 
 public class Job1Reducer extends Reducer<Text, Text, Text, Text> {
     @Override
-    protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {        List<String> relations = new ArrayList<>();
+    protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+        List<String> relations = new ArrayList<>();
         for (Text value : values) {
             System.out.println("Reducing: " + key + " -> " + value.toString());
             String relation = value.toString().trim();

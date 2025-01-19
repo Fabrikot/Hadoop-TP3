@@ -12,7 +12,7 @@ import java.io.IOException;
 public class ColFilJob1 {
     public static void main(String[]args) throws IOException, InterruptedException, ClassNotFoundException {
         if (args.length != 2) {
-            System.err.println("Invalid command : ColFilJob1 <input path> <output path>");
+            System.out.println("Invalid command : ColFilJob1 <input path> <output path>");
             System.exit(-1);
         }
 
