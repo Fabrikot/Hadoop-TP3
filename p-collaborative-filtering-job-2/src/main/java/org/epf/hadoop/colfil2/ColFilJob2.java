@@ -54,7 +54,7 @@ public class ColFilJob2 extends Configured implements Tool {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
 
-        // Définir le nombre des reducers
+        // Deux reducers demandés
         job.setNumReduceTasks(2);
 
         // Ajouter les chemins d'entrée et de sortie
